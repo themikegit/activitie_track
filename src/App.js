@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import history from "./history";
+import TableList from "./TableList";
+import AddAct from "./AddAct";
+import Select from "./SelectDrop";
+import { CntProvider } from "./Context";
+import ExportExe from "./ExportExe";
+import SignInSide from "./SignInSide";
+import Logout from "./Logout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<CntProvider>
+				<Router history={history}>
+					<Route exact path="/" component={SignInSide} />
+
+					<div style={{ display: "flex", justifyContent: "space-between" }}>
+						<Route exact path="/activities" component={AddAct} />
+						<div style={{ display: "flex", alignItems: "center" }}>
+							<Route exact path="/activities" component={Select} />
+							<Route exact path="/activities" component={ExportExe} />
+							<Route exact path="/activities" component={Logout} />
+						</div>
+					</div>
+
+					<Route exact path="/activities" component={TableList} />
+				</Router>
+			</CntProvider>
+		</div>
+	);
 }
 
 export default App;
