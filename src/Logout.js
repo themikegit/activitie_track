@@ -8,7 +8,7 @@ export default function Logout() {
 			.auth()
 			.signOut()
 			.then(function () {
-				history.push("/");
+				history.push("#/");
 				window.location.reload();
 				// Sign-out successful.
 			})

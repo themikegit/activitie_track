@@ -32,4 +32,3 @@ export const periodList = [
 	{ timeA: "9:15 - 12:45", timeB: "13:15 - 17:15" },
 	{ timeA: "9:00 - 14:00", timeB: "14:30 - 17:00" },
 ];
-

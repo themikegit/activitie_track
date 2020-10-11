@@ -50,8 +50,7 @@ export const CntProvider = (props) => {
 	};
 
 	/// State for month
-	const [month, setmonth] = useState( new Date().getMonth());
-	
+	const [month, setmonth] = useState(new Date().getMonth());
 
 	return (
 		<Context.Provider

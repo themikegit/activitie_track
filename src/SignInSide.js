@@ -15,6 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase/app";
 import "firebase/auth";
+import hashHistory from "./history";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -62,8 +63,8 @@ export default function SignInSide() {
 			.then(
 				() => {
 					console.log("logeeed!");
-					history.push("/activities");
-				window.location.reload();
+					history.push("#/activities");
+					window.location.reload();
 				},
 				(err) => {
 					console.log("Error logging in: ", err);

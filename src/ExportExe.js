@@ -9,9 +9,11 @@ const ExcelColumn = ReactExport.ExcelFile.ExcelColumn;
 
 export default function ExportExe() {
 	const { activityTxt, month } = useContext(Context);
- const shuffle  = periodList.sort(function(){
-   return 0.5 - Math.random();
- })
+	const shuffle = periodList.sort(function () {
+		return 0.5 - Math.random();
+	});
+	console.log(shuffle, "shufle");
+
 	const daysMonth = new Date(2020, month, 0).getDate();
 	const arr = [];
 	for (let i = 0; i <= daysMonth; i++) {
@@ -30,7 +32,7 @@ export default function ExportExe() {
 
 	const dataForExe = activityTxt.map(function (item, index) {
 		const timeRandom =
-			index % 2 === 0 ? shuffle[index].timeA : shuffle[index - 1].timeB;
+			(index + 2) % 2 === 0 ? shuffle[index].timeA : shuffle[index - 1].timeB;
 		//populate object for xlxs
 
 		const entry = {
