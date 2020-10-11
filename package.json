@@ -1,6 +1,6 @@
 {
-	"homepage": "http://themikegit.github.io/daily_activities/",
-	"name": "daily-activities",
+	"homepage": "http://themikegit.github.io/activitie_track/",
+	"name": "activitie_track",
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
